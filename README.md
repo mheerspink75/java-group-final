@@ -12,5 +12,5 @@ For this assessment students will work in a group(s) to write a full stack appli
 
 ## Wireframe
 
-[Wireframe LucidChart Link](https://lucid.app/lucidchart/invitations/accept/inv_a1fca5b6-31d4-4963-99e9-de27725c1f7b)
+[Wireframe Figma Link](https://www.figma.com/file/JKGV6vAsGILQV0CxozGo5B/Final-Wireframe?node-id=0%3A1)
 
