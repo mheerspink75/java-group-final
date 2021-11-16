@@ -8,7 +8,6 @@ const AdminAddMembers = () => {
 	return (
 		<div>
 			Logo pending
-			<BackButton></BackButton>
 		<div style={{display:'flex', flexDirection:'column',rowGap:'80px', alignItems:"center", border:'2px solid black', height:'400px', width:'400px', margin:'auto', marginTop:'20%'}}>
 			
 			<BackButton onClick={()=>alert("alert message")}></BackButton>
