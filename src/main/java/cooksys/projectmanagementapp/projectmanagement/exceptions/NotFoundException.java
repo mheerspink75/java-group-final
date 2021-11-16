@@ -7,7 +7,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-public class NotFoundException {
+public class NotFoundException extends RuntimeException {
 
     private static final long serialVersionUID = 8717524765921018451L;
 
