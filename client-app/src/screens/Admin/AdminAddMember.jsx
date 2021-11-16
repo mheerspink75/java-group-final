@@ -1,5 +1,4 @@
-import {Button} from "../../components/Button"
-import BackButton from "../../components/BackButton"
+import {Button, BackButton} from "../../components/Button"
 import Dropdown from "../../components/Dropdown"
 
 const AdminAddMembers = () => {
