@@ -4,6 +4,7 @@ import UserHomePage from './screens/User/HomePage';
 import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import VerticalSidebar from './components/VerticalSidebar';
 
 const App = () => (
   <Router>
@@ -11,6 +12,7 @@ const App = () => (
       <Route path="/" element={<UserHomePage />} />
       <Route path="user">
         <Route path="." element={<UserHomePage />} />
+       
       </Route>
       <Route path="login" element={<Login />} />
     </Routes>
