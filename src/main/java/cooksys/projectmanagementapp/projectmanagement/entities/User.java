@@ -37,17 +37,14 @@ public class User {
 
     private String status;
 
-    private long team;
+    @ManyToOne
+    @JoinColumn
+//    @JoinColumn(name = "team_id")
+    private Team team;
 
     @ManyToOne
     @JoinColumn
-    private List<Team> teams;
-
-    private long company;
-
-    @ManyToOne
-    @JoinColumn
-    private List<Company> companies;
+    private Company company;
 
     @Column(nullable = false, updatable = false)
     @CreationTimestamp
