@@ -1,6 +1,8 @@
 import Navbar from "react-bootstrap/Navbar"
 import Container from "react-bootstrap/Container"
 import Nav from "react-bootstrap/Nav"
+import React from "react";
+
 
 export const SidebarButton = (props) => {
 
@@ -13,4 +15,10 @@ export const SidebarButton = (props) => {
 
 
 }
+
+
+export const Button = (props) => {
+	return (<button onClick={props.onClick}>{props.name}</button>)
+}
+
 

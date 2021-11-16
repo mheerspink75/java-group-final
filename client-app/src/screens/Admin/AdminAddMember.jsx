@@ -1,4 +1,4 @@
-import Button from "../../components/Button"
+import {Button} from "../../components/Button"
 import BackButton from "../../components/BackButton"
 import Dropdown from "../../components/Dropdown"
 
