@@ -34,7 +34,7 @@ public class UserResponseDto {
 
     private Timestamp joined;
 
-    private Team team;
+//    private Team team;
 
     private Company company;
 }

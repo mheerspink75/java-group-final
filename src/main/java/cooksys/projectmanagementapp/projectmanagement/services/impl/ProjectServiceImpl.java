@@ -1,12 +1,15 @@
-package cooksys.projectmanagementapp.projectmanagement.services;
+package cooksys.projectmanagementapp.projectmanagement.services.impl;
 
 import cooksys.projectmanagementapp.projectmanagement.dtos.ProjectDto;
 import cooksys.projectmanagementapp.projectmanagement.entities.Project;
 import cooksys.projectmanagementapp.projectmanagement.exceptions.NotFoundException;
 import cooksys.projectmanagementapp.projectmanagement.mappers.ProjectMapper;
 import cooksys.projectmanagementapp.projectmanagement.repositories.ProjectRepository;
+import cooksys.projectmanagementapp.projectmanagement.services.ProjectService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
+@Service
 @RequiredArgsConstructor
 public class ProjectServiceImpl implements ProjectService {
 	
