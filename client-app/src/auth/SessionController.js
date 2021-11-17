@@ -1,13 +1,9 @@
-import {AdminSession, NullSession, UserSession} from './Session';
-
-/**
- * @typedef {import('./Session').BaseSession} Session
- */
+import Session from './Session';
 
 export default class SessionController {
   /**
    * @param {Session} session 
-   * @param {(session: Session) => void} setSession 
+   * @param {(session: Session) => void} setSession Updates React State
    */
   constructor(session, setSession) {
     this._session = session;
@@ -23,14 +19,14 @@ export default class SessionController {
    */
   async login(username, password) {
     const session = (() => {
-      if (username === "admin@admin.com" && password === "password") return new AdminSession(username);
-      else if (username === "user@user.com" && password === "password") return new UserSession(username);
+      if (username === "admin@admin.com" && password === "password") return Session.newAdmin(username);
+      else if (username === "user@user.com" && password === "password") return Session.newUser(username);
       else throw new Error('Invalid credentials');
     })();
     this._setSession(session);
     return session;
   }
   async logout() {
-    this._setSession(new NullSession());
+    this._setSession(Session.destroy());
   }
 }
