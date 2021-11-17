@@ -12,7 +12,7 @@ public interface TeamMapper {
 
     Team requestDtoToEntity(TeamDto teamDto);
 
-    TeamDto entiityToResponseDto(Team team);
+    TeamDto entityToResponseDto(Team team);
 
     List<TeamDto> entitiesToResponseDtos(List<Team> teams);
 

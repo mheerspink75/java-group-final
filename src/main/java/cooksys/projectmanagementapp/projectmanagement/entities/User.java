@@ -39,7 +39,7 @@ public class User {
 
     @ManyToOne
     @JoinColumn
-    private Team team;
+    private Team usersTeam;
 
     @ManyToOne
     @JoinColumn

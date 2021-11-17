@@ -2,21 +2,14 @@ package cooksys.projectmanagementapp.projectmanagement.dtos;
 
 import java.sql.Timestamp;
 
-import cooksys.projectmanagementapp.projectmanagement.entities.Company;
-import cooksys.projectmanagementapp.projectmanagement.entities.Team;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
 
-
-@Getter
-@Setter
-@NoArgsConstructor
 @Data
+@NoArgsConstructor
 public class UserResponseDto {
 
-    private CredentialsDto credentials;
+    private String username;
 
     private String firstName;
 
@@ -34,7 +27,8 @@ public class UserResponseDto {
 
     private Timestamp joined;
 
-//    private Team team;
+    private TeamDto team;
 
-    private Company company;
+    private CompanyDto company;
+
 }

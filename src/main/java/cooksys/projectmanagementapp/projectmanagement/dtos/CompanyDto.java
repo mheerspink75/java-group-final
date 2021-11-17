@@ -3,8 +3,8 @@ package cooksys.projectmanagementapp.projectmanagement.dtos;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@NoArgsConstructor
 @Data
+@NoArgsConstructor
 public class CompanyDto {
 
     private long id;

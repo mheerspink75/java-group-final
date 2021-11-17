@@ -2,17 +2,12 @@ package cooksys.projectmanagementapp.projectmanagement.dtos;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
 
-
-@Getter
-@Setter
-@NoArgsConstructor
 @Data
+@NoArgsConstructor
 public class UserRequestDto {
 
-    private long id;
+//    private long id;
 
     private CredentialsDto credentials;
 
@@ -30,8 +25,8 @@ public class UserRequestDto {
 
     private String status;
 
-    private long teamId;
+    private TeamDto team;
 
-    private long companyId;
+    private CompanyDto company;
 
 }

@@ -2,6 +2,7 @@ package cooksys.projectmanagementapp.projectmanagement.mappers;
 
 import java.util.List;
 
+import cooksys.projectmanagementapp.projectmanagement.dtos.CompanyDto;
 import cooksys.projectmanagementapp.projectmanagement.dtos.UserRequestDto;
 import cooksys.projectmanagementapp.projectmanagement.dtos.UserResponseDto;
 import cooksys.projectmanagementapp.projectmanagement.entities.User;
@@ -15,9 +16,10 @@ public interface UserMapper {
 
     User requestDtoToEntity(UserRequestDto userRequestDto);
 
-//    @Mapping(target = "credentials", source = "credentials")
+    @Mapping(target = "username", source = "credentials.username")
     UserResponseDto entityToResponseDto(User user);
 
-//    List<UserResponseDto> entitiesToResponseDtos(List<User> users);
+
+    List<UserResponseDto> entitiesToResponseDtos(List<User> users);
 
 }
