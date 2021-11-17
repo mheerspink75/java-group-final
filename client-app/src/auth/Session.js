@@ -1,44 +1,58 @@
-export class BaseSession {
+/**
+ * @typedef {{
+ *  username: string;
+ *  is_admin: boolean;
+ *  is_logged_in: boolean;
+ * }} SessionData
+ */
+
+const storage = sessionStorage;
+const storageKey = 'session';
+
+export default class Session {
+  /**
+   * @param {SessionData} data 
+   */
+  constructor(data) {
+    this.data = data;
+  }
+  username() {
+    return this.data.username;
+  }
+  isAdmin() {
+    return this.data.is_admin;
+  }
+  isLoggedIn() {
+    return this.data.is_logged_in;
+  }
+  /**
+   * @param {string} username
+   */
+  static newAdmin(username) {
+    return new Session({username, is_logged_in: true, is_admin: true}).write();
+  }
   /**
    * @param {string} username 
    */
-  constructor(username) {
-    this._username = username;
+  static newUser(username) {
+    return new Session({username, is_logged_in: true, is_admin: false}).write();
   }
-  username() {
-    return this._username;
+  static newNull() {
+    return NullSession.write();
   }
-  isAdmin() {
-    return false;
+  write() {
+    storage.setItem(storageKey, JSON.stringify(this.data));
+    return this;
   }
-  isLoggedIn() {
-    return false;
+  static read() {
+    const data = storage.getItem(storageKey);
+    if (data) return new Session(JSON.parse(data));
+    else return Session.newNull();
   }
-}
-
-export class AdminSession extends BaseSession {
-  isAdmin() {
-    return true;
-  }
-  isLoggedIn() {
-    return true;
+  static destroy() {
+    storage.removeItem(storageKey);
+    return NullSession;
   }
 }
 
-export class UserSession extends BaseSession {
-  isAdmin() {
-    return false;
-  }
-  isLoggedIn() {
-    return true;
-  }
-}
-
-export class NullSession extends BaseSession {
-  isAdmin() {
-    return false;
-  }
-  isLoggedIn() {
-    return false;
-  }
-}
+const NullSession = new Session({username: '', is_logged_in: false, is_admin: false});
