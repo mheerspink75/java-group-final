@@ -18,7 +18,14 @@ export const SidebarButton = (props) => {
 }
 
 export const Button = (props) => {
-	return (<button onClick={props.onClick}>{props.name}</button>)
+	return (<button onClick={props.onClick}
+		style={{
+			paddingRight:'20px',
+			paddingLeft:'20px',
+		}}
+	>{props.name}
+	
+	</button>)
 }
 
 const BackButtonStyle = {
