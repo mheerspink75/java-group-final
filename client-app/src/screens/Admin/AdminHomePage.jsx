@@ -1,5 +1,7 @@
+import AdminNavbar from '../../components/AdminNavbar';
+
 const AdminHomePage = () => (
-  <h3>Admin Home Page!</h3>
+  <AdminNavbar />
 );
 
 export default AdminHomePage;
