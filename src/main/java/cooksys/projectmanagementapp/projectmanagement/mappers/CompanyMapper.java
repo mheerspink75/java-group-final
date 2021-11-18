@@ -14,6 +14,6 @@ public interface CompanyMapper {
 
     CompanyDto entityToResponseDto(Company company);
 
-    List<CompanyDto> entitiesToResponseDtos(List<Company> companies);
+    List<CompanyDto> entitiesToResponseDto(List<Company> companies);
 
 }

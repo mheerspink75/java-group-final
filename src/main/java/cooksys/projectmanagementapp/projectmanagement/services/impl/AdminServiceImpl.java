@@ -1,7 +1,6 @@
 package cooksys.projectmanagementapp.projectmanagement.services.impl;
 
 import cooksys.projectmanagementapp.projectmanagement.services.AdminService;
-
 import cooksys.projectmanagementapp.projectmanagement.dtos.UserResponseDto;
 import cooksys.projectmanagementapp.projectmanagement.entities.User;
 import cooksys.projectmanagementapp.projectmanagement.exceptions.BadRequestException;
@@ -12,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 
 @Service
 @RequiredArgsConstructor

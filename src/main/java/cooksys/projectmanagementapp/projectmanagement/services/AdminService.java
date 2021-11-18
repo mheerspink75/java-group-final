@@ -9,4 +9,5 @@ public interface AdminService {
     UserResponseDto getAdminUser(String username);
 
     List<UserResponseDto> getAllUsers();
+
 }

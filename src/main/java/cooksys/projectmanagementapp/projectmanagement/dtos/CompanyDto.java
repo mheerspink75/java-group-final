@@ -13,7 +13,4 @@ public class CompanyDto {
 
     private String description;
 
-//    ??
-//    private TeamDto teams;
-
 }

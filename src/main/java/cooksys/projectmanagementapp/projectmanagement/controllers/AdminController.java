@@ -1,5 +1,6 @@
 package cooksys.projectmanagementapp.projectmanagement.controllers;
 
+
 import cooksys.projectmanagementapp.projectmanagement.dtos.UserResponseDto;
 import cooksys.projectmanagementapp.projectmanagement.services.AdminService;
 import lombok.RequiredArgsConstructor;
@@ -25,4 +26,5 @@ public class AdminController {
     public UserResponseDto getAdminUser(@PathVariable String username) {
         return adminService.getAdminUser(username);
     }
+
 }
