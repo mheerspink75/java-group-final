@@ -1,6 +1,5 @@
 package cooksys.projectmanagementapp.projectmanagement.controllers;
 
-
 import cooksys.projectmanagementapp.projectmanagement.dtos.UserResponseDto;
 import cooksys.projectmanagementapp.projectmanagement.services.AdminService;
 import lombok.RequiredArgsConstructor;
@@ -17,7 +16,7 @@ import java.util.List;
 public class AdminController {
     private final AdminService adminService;
 
-    @GetMapping("/")
+    @GetMapping
     public List<UserResponseDto> getAllUsers() {
         return adminService.getAllUsers();
     }

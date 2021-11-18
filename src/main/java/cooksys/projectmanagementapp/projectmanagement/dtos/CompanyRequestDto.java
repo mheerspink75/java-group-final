@@ -3,12 +3,12 @@ package cooksys.projectmanagementapp.projectmanagement.dtos;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
 @NoArgsConstructor
-public class CompanyDto {
+@Data
+public class CompanyRequestDto {
 
-    private String name;
+    private CredentialsDto credentials;
 
-    private String description;
+    private CompanyDto company;
 
 }
