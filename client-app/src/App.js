@@ -8,6 +8,7 @@ import AdminAddMembers from './screens/Admin/AdminAddMember';
 import AdminProjectView from './screens/Admin/AdminProjectView';
 import AdminTeams from './screens/Admin/AdminTeams';
 import { AdminRegister } from './screens/Admin/AdminRegister';
+import AdminUsers from './screens/Admin/AdminUsers';
 import AuthProvider from './auth/AuthProvider';
 import RequireUser from './auth/RequireUser';
 import RequireAdmin from './auth/RequireAdmin';
@@ -23,9 +24,11 @@ const App = () => (
         <Route path="login" element={<Login />} />
         <Route path="admin" element={<RequireAdmin />}>
           <Route index element={<AdminHomePage/>} />
+          <Route index path="home" element={<AdminHomePage/>} />
           <Route path="register-user" element={<AdminRegister />} />
           <Route path="add-member" element={<AdminAddMembers />} />
           <Route path="project-view" element={<AdminProjectView />} />
+          <Route path="users" element={<AdminUsers/>}/> 
           <Route path="teams" element={<AdminTeams />} />
         </Route>
         <Route path="*" element={<NoMatch />} />
