@@ -19,7 +19,7 @@ public class Team {
 
     private String description;
 
-    @OneToMany(mappedBy = "usersTeam")
+    @OneToMany(mappedBy = "team")
     private List<User> users;
 
     @OneToMany(mappedBy = "projectTeam")
@@ -28,9 +28,5 @@ public class Team {
     @ManyToOne
     @JoinColumn
     private Company teamCompany;
-
-//    @ManyToOne
-//    @JoinColumn
-//    private Team team;
 
 }

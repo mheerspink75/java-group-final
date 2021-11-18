@@ -6,7 +6,6 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -39,7 +38,7 @@ public class User {
 
     @ManyToOne
     @JoinColumn
-    private Team usersTeam;
+    private Team team;
 
     @ManyToOne
     @JoinColumn

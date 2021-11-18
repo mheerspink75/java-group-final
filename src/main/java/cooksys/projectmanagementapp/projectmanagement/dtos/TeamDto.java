@@ -13,6 +13,4 @@ public class TeamDto {
 
     private String description;
 
-//    private long companyId;
-
 }

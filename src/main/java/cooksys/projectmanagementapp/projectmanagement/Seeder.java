@@ -165,7 +165,7 @@ public class Seeder implements CommandLineRunner {
         user_1.setActive(true);
         user_1.setAdmin(false);
         user_1.setStatus("Joined");
-        user_1.setUsersTeam(team_1);
+        user_1.setTeam(team_1);
         user_1.setCompany(company_1);
         userRepository.saveAndFlush(user_1);
 
@@ -182,7 +182,7 @@ public class Seeder implements CommandLineRunner {
         user_2.setActive(true);
         user_2.setAdmin(false);
         user_2.setStatus("Joined");
-        user_2.setUsersTeam(team_1);
+        user_2.setTeam(team_1);
         user_2.setCompany(company_1);
         userRepository.saveAndFlush(user_2);
 
@@ -199,7 +199,7 @@ public class Seeder implements CommandLineRunner {
         user_3.setActive(true);
         user_3.setAdmin(false);
         user_3.setStatus("Joined");
-        user_3.setUsersTeam(team_1);
+        user_3.setTeam(team_1);
 //        user_3.setCompany(company_1);
 //        user_3.getCompany().
         userRepository.saveAndFlush(user_3);
@@ -217,7 +217,7 @@ public class Seeder implements CommandLineRunner {
         user_4.setActive(true);
         user_4.setAdmin(false);
         user_4.setStatus("Joined");
-        user_4.setUsersTeam(team_2);
+        user_4.setTeam(team_2);
         user_4.setCompany(company_1);
         userRepository.saveAndFlush(user_4);
 
@@ -234,7 +234,7 @@ public class Seeder implements CommandLineRunner {
         user_5.setActive(true);
         user_5.setAdmin(false);
         user_5.setStatus("Joined");
-        user_5.setUsersTeam(team_2);
+        user_5.setTeam(team_2);
         user_5.setCompany(company_1);
         userRepository.saveAndFlush(user_5);
 
@@ -251,7 +251,7 @@ public class Seeder implements CommandLineRunner {
         user_6.setActive(true);
         user_6.setAdmin(false);
         user_6.setStatus("Joined");
-        user_6.setUsersTeam(team_2);
+        user_6.setTeam(team_2);
         user_6.setCompany(company_1);
         userRepository.saveAndFlush(user_6);
 
@@ -268,7 +268,7 @@ public class Seeder implements CommandLineRunner {
         user_7.setActive(true);
         user_7.setAdmin(false);
         user_7.setStatus("Joined");
-        user_7.setUsersTeam(team_3);
+        user_7.setTeam(team_3);
         user_7.setCompany(company_1);
         userRepository.saveAndFlush(user_7);
 
@@ -285,7 +285,7 @@ public class Seeder implements CommandLineRunner {
         user_8.setActive(true);
         user_8.setAdmin(false);
         user_8.setStatus("Joined");
-        user_8.setUsersTeam(team_3);
+        user_8.setTeam(team_3);
         user_8.setCompany(company_1);
         userRepository.saveAndFlush(user_8);
 
@@ -302,7 +302,7 @@ public class Seeder implements CommandLineRunner {
         user_9.setActive(true);
         user_9.setAdmin(false);
         user_9.setStatus("Joined");
-        user_9.setUsersTeam(team_3);
+        user_9.setTeam(team_3);
         user_9.setCompany(company_1);
         userRepository.saveAndFlush(user_9);
     }
