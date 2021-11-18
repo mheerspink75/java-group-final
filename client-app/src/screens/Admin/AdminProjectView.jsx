@@ -16,6 +16,15 @@ const AdminProjectView = () => {
 	const cancelButton = () => {
 		SetEdit(false)
 	}
+
+	const textAreaStyle = {
+		width: '80%',
+		height: '500px',
+		margin: 'auto',
+		borderRadius:'20px',
+		padding:'20px',
+		resize:'none'
+	}
 	
 
 	return (
@@ -26,15 +35,14 @@ const AdminProjectView = () => {
 				<a href="/admin-teams" style={{ textDecoration: 'none', marginLeft: '10%',marginRight:'84%' }}>&lt;- Back</a>
 
 				{edit ? <div style={{ display: 'flex', flexDirection: 'column' }} >
-					<TextArea content={value} id="projectDescription" readOnly={false} > </TextArea>
+					<TextArea style={textAreaStyle} content={value} id="projectDescription" readOnly={false} > </TextArea>
 					<div style={{ marginLeft: '70%', paddingTop: '10px', display: 'flex', columnGap: '20px' }}>
 						<Button name="save" onClick={saveButton}  ></Button>
 						<Button name="cancel" onClick={cancelButton} ></Button>
-
 					</div>
 				</div> :
 					<div style={{ display: 'flex', flexDirection: 'column' }}>
-						<TextArea content={value} id="projectDescription" readOnly={true} > </TextArea>
+						<TextArea style={textAreaStyle} content={value} id="projectDescription" readOnly={true} > </TextArea>
 						<div style={{ marginLeft: '80%', paddingTop: '10px' }}>
 							<Button name="edit" onClick={editButton}  ></Button>
 						</div>

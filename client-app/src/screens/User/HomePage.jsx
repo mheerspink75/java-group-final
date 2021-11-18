@@ -36,6 +36,7 @@ const NavbarLinks = () => (
   <ul style={{display: 'flex', listStyleType: 'none', gap: '5px'}}>
     <li><Link to="/">Home</Link></li>
     <li><Link to="/teams">My Team</Link></li>
+	<li><Link to="/admin-teams">Admin Teams</Link></li>
   </ul>
 );
 
