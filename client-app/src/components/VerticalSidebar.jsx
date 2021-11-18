@@ -1,4 +1,3 @@
-import { propTypes } from "react-bootstrap/esm/Image";
 import { SidebarButton } from "./Button";
 import { SolidButton } from "./Button";
 

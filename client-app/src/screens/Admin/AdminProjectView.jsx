@@ -32,7 +32,7 @@ const AdminProjectView = () => {
 			Insert Logo Component
 			<div style={{ display: 'flex', flexDirection: 'column' }}>
 				<h1 style={{ textAlign: 'center', marginTop: '10%' }}>Project 1</h1>
-				<a href="/admin-teams" style={{ textDecoration: 'none', marginLeft: '10%',marginRight:'84%' }}>&lt;- Back</a>
+				<a href="/admin/teams" style={{ textDecoration: 'none', marginLeft: '10%',marginRight:'84%' }}>&lt;- Back</a>
 
 				{edit ? <div style={{ display: 'flex', flexDirection: 'column' }} >
 					<TextArea style={textAreaStyle} content={value} id="projectDescription" readOnly={false} > </TextArea>

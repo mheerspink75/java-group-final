@@ -3,8 +3,6 @@ import AdminNavbar from "../../components/AdminNavbar"
 
 
 const AdminTeams = () => {
-	let members = ["Alex", "Ben", "Carl", "Dennis"]
-	
 	const textAreaStyle = {
 		width: '100%',
 		height: '100%',
@@ -28,25 +26,25 @@ const AdminTeams = () => {
 			<AdminNavbar />
 			<div style={{ height:'80%',display: 'flex', flexDirection: 'row', justifyContent: 'space-around', paddingRight:'5%', paddingTop: '2%', paddingLeft:'5%', paddingBottom:'10%' }}>
 				<div style={{ display: 'flex', flexDirection: 'column', width:'20%' }}>
-					<VerticalSidebar name1="Team 1" name2="Team 2" name3="Team 3" route1="/admin-teams" route2="/admin-teams" route3="/admin-teams" style={{height:"50%", width:"200px", display:"block", paddingTop:'30%' }}></VerticalSidebar>
+					<VerticalSidebar name1="Team 1" name2="Team 2" name3="Team 3" route1="/admin/teams" route2="/admin/teams" route3="/admin/teams" style={{height:"50%", width:"200px", display:"block", paddingTop:'30%' }}></VerticalSidebar>
 					
 				</div>
 				<div style={{ width: '100%', overflowY: 'scroll', display: 'flex', flexDirection: 'column', rowGap:'5%', height: '700px' }}>
 					<div style={{ width: '100%', display: 'flex', flexDirection: 'row' }}>
 						<div style={{ border: '1px solid black', borderRadius:'10px', width: '30%', fontSize: '40px', padding:'5%', margin:'auto'}}>Project 1</div>
-						<div style={textAreaStyle} >{cutString(tempContent)}<a href="/admin-project-view">Read more</a> </div>
+						<div style={textAreaStyle} >{cutString(tempContent)}<a href="/admin/project-view">Read more</a> </div>
 					</div>
 					<div style={{ width: '100%', display: 'flex', flexDirection: 'row' }}>
 						<div style={{ border: '1px solid black', borderRadius:'10px', width: '30%', fontSize: '40px', padding:'5%', margin:'auto'}}>Project 2</div>
-						<div style={textAreaStyle} >{cutString(tempContent)}<a href="/admin-project-view">Read more</a> </div>
+						<div style={textAreaStyle} >{cutString(tempContent)}<a href="/admin/project-view">Read more</a> </div>
 					</div>
 					<div style={{ width: '100%', display: 'flex', flexDirection: 'row' }}>
 						<div style={{ border: '1px solid black', borderRadius:'10px', width: '30%', fontSize: '40px', padding:'5%', margin:'auto'}}>Project 3</div>
-						<div style={textAreaStyle} >{cutString(tempContent)}<a href="/admin-project-view">Read more</a> </div>
+						<div style={textAreaStyle} >{cutString(tempContent)}<a href="/admin/project-view">Read more</a> </div>
 					</div>
 					<div style={{ width: '100%', display: 'flex', flexDirection: 'row' }}>
 						<div style={{ border: '1px solid black', borderRadius:'10px', width: '30%', fontSize: '40px', padding:'5%', margin:'auto'}}>Project 4</div>
-						<div style={textAreaStyle} >{cutString(tempContent)}<a href="/admin-project-view">Read more</a> </div>
+						<div style={textAreaStyle} >{cutString(tempContent)}<a href="/admin/project-view">Read more</a> </div>
 					</div>
 				</div>
 			</div>
