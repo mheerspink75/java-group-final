@@ -24,6 +24,11 @@ public class ProjectServiceImpl implements ProjectService {
 		projectMapper.update(update, oldProject);
 		return projectMapper.entityToResponseDto(projectRepository.save(oldProject));
 	}
+	@Override
+	public ProjectDto getProject(long id) {
+		return projectMapper.entityToResponseDto(projectRepository.findById(id)
+				.orElseThrow(() -> new NotFoundException("No project with such id was found")));
+	}
 	
 
 }

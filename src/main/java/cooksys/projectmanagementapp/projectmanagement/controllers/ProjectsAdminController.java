@@ -1,6 +1,7 @@
 package cooksys.projectmanagementapp.projectmanagement.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,7 +13,7 @@ import cooksys.projectmanagementapp.projectmanagement.services.ProjectService;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor(onConstructor_=@Autowired)
-@RequestMapping("/projects")
+@RequestMapping("admin/projects")
 @RestController
 public class ProjectsAdminController {
 
@@ -21,6 +22,11 @@ public class ProjectsAdminController {
 	public ProjectDto projectUpdate(@RequestBody ProjectDto projectDto, 
 		  @PathVariable("id") long projectId) {
 		 return projectService.updateProject(projectDto, projectId);
+	}
+	
+	@GetMapping("/{id}")
+	public ProjectDto getProject(@PathVariable long id) {
+		return projectService.getProject(id);
 	}
 	
 }
