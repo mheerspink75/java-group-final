@@ -9,4 +9,6 @@ public interface UserService {
     UserResponseDto getUser(String username);
 
     List<UserResponseDto> getAllUsers();
+    
+    UserResponseDto deleteUser(String username);
 }

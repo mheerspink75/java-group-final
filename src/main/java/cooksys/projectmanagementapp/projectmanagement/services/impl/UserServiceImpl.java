@@ -39,4 +39,16 @@ public class UserServiceImpl implements UserService{
     public List<UserResponseDto> getAllUsers() {
         return userMapper.entitiesToResponseDtos(userRepository.findAll());
     }
+    
+    public UserResponseDto deleteUser(String username) {
+    	User user =
+                userRepository.findByCredentialsUsername(username).orElseThrow( () -> new NotFoundException("User not found"));
+
+        if (!user.isActive()) {
+            throw new BadRequestException("User is Inactive");
+        }
+        user.setActive(false);
+        userRepository.saveAndFlush(user);
+        return userMapper.entityToResponseDto(user);
+    }
 }
