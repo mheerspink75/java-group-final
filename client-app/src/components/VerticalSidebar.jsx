@@ -2,9 +2,15 @@ import { SidebarButton } from "./Button";
 import { SolidButton } from "./Button";
 
 const VerticalSidebar = (props) => {
+
+	let style={height:"100%", width:"145px", display:"block", margin:"40px" }
+	if(props.style){
+		style =props.style
+	}
+
     return (
-        <>
-        <div className="sidebar" style={{height:"100%", width:"145px", display:"block", margin:"40px" }}>
+		<>
+        <div className="sidebar" style={style}>
 
             <SidebarButton name={props.name1} link={props.route1}></SidebarButton>
             <SidebarButton name={props.name2} link={props.route2}></SidebarButton>
