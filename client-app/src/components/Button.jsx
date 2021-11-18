@@ -8,11 +8,21 @@ export const SidebarButton = (props) => {
     return(
 
     <Nav.Link href={props.link}>
-   <button type="button" class="btn btn-outline-primary">{props.name}</button>
+   <button type="button" class="btn btn-outline-primary" style={{padding:"10px 25px", margin:"10px"}}>{props.name}</button>
     </Nav.Link>
     )
 
 
+}
+
+export const SolidButton = (props) => {
+	return(
+
+		<Nav.Link href={props.link}>
+	   <button type="button" class="btn btn-outline-primary" style={{padding:"5px 10px", margin:"3px", background:"blue", transform:"2s", color:"white", 
+	                                                                borderRadius:"35px"}}>{props.name}</button>
+		</Nav.Link>
+		)
 }
 
 export const Button = (props) => {

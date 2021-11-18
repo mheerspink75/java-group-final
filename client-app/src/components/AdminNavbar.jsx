@@ -9,9 +9,9 @@ const AdminNavbar = () => {
         <Navbar.Brand href='/'>React-Bootstrap</Navbar.Brand>
         
         <Nav className='me-auto'>
-          <Nav.Link href='/'>Home</Nav.Link>
-          <Nav.Link href='/teams'>Teams</Nav.Link>
-          <Nav.Link href='/users'>Users</Nav.Link>
+          <Nav.Link href='/admin'>Home</Nav.Link>
+          <Nav.Link href='/admin/teams'>Teams</Nav.Link>
+          <Nav.Link href='/admin/users'>Users</Nav.Link>
         </Nav>
       </Container>
     </Navbar>

@@ -5,9 +5,11 @@ name: Client CI
 
 on:
   push:
-    branches: [ client ]
+    types: [opened, synchronize, edited, reopened]
+    branches: [master, client]
   pull_request:
-    branches: [ client ]
+    types: [opened, synchronize, edited, reopened]
+    branches: [master, client]
 
 jobs:
   build:
