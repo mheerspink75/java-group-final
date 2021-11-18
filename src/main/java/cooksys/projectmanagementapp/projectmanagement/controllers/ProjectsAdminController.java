@@ -9,19 +9,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 import cooksys.projectmanagementapp.projectmanagement.dtos.ProjectDto;
 import cooksys.projectmanagementapp.projectmanagement.services.ProjectService;
-import cooksys.projectmanagementapp.projectmanagement.entities.Project;
-import cooksys.projectmanagementapp.projectmanagement.exceptions.NotFoundException;
-import cooksys.projectmanagementapp.projectmanagement.mappers.ProjectMapper;
-import cooksys.projectmanagementapp.projectmanagement.repositories.ProjectRepository;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor(onConstructor_=@Autowired)
-@RequestMapping("/api/admin")
+@RequestMapping("/projects")
 @RestController
 public class ProjectsAdminController {
 
 	private final ProjectService projectService;
-	@PatchMapping("/projects/{id}")
+	@PatchMapping("/{id}")
 	public ProjectDto projectUpdate(@RequestBody ProjectDto projectDto, 
 		  @PathVariable("id") long projectId) {
 		 return projectService.updateProject(projectDto, projectId);
