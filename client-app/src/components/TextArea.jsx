@@ -3,14 +3,7 @@
 const TextArea = (props) => {
 	return (
 		<textarea type="text" readOnly={props.readOnly} id={props.id}
-			style={{
-				width: '80%',
-				height: '500px',
-				margin: 'auto',
-				borderRadius:'20px',
-				padding:'20px',
-				resize:'none'
-			}}>
+			style={props.style}>
 
 			{props.content}
 		</textarea>
