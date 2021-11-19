@@ -9,12 +9,15 @@ import cooksys.projectmanagementapp.projectmanagement.services.ProjectService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class ProjectServiceImpl implements ProjectService {
 	
 	private final ProjectRepository projectRepository;
 	private final ProjectMapper projectMapper;
+
 	@Override
 	public ProjectDto updateProject(ProjectDto projectDto, long id) {
 		projectDto.setId(id);
@@ -24,11 +27,17 @@ public class ProjectServiceImpl implements ProjectService {
 		projectMapper.update(update, oldProject);
 		return projectMapper.entityToResponseDto(projectRepository.save(oldProject));
 	}
+
 	@Override
 	public ProjectDto getProject(long id) {
 		return projectMapper.entityToResponseDto(projectRepository.findById(id)
 				.orElseThrow(() -> new NotFoundException("No project with such id was found")));
 	}
-	
+
+	@Override
+	public List<ProjectDto> getAllProjects() {
+		return projectMapper.entitiesToResponseDtos(projectRepository.findAll());
+	}
+
 
 }

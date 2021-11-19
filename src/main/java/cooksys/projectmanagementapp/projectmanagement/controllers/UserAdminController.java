@@ -32,7 +32,8 @@ public class UserAdminController {
     @PostMapping
     public UserResponseDto createUser(@RequestBody UserRequestDto userRequestDto) {
         return userService.createUser(userRequestDto);
-      
+    }
+
     @DeleteMapping("/{username}")
     public UserResponseDto deleteUser(@PathVariable String username) {
         return userService.deleteUser(username);

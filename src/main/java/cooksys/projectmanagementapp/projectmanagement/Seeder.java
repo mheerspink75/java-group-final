@@ -9,8 +9,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import java.util.Arrays;
-import java.util.List;
 
 
 @Component
@@ -65,9 +63,9 @@ public class Seeder implements CommandLineRunner {
         team_3.setTeamCompany(company_1);
         teamRepository.saveAndFlush(team_3);
 
-        List<Team> comp_1_teams = Arrays.asList(team_1, team_2, team_3);
-        company_1.setCompanyTeams(comp_1_teams);
-        companyRepository.saveAndFlush(company_1);
+//        List<Team> comp_1_teams = Arrays.asList(team_1, team_2, team_3);
+//        company_1.setCompanyTeams(comp_1_teams);
+//        companyRepository.saveAndFlush(company_1);
 
 
 //        Project 1
@@ -199,9 +197,11 @@ public class Seeder implements CommandLineRunner {
         user_3.setActive(true);
         user_3.setAdmin(false);
         user_3.setStatus("Joined");
+        user_3.setCompany(company_1);
         user_3.setTeam(team_1);
 //        user_3.setCompany(company_1);
 //        user_3.getCompany().
+
         userRepository.saveAndFlush(user_3);
 
 //        CRED_4
