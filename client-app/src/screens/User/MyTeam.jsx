@@ -1,4 +1,3 @@
-import UserNavbar from "../../components/AdminNavbar"
 import VerticalSidebar from "../../components/VerticalSidebar"
 import { Route, Routes } from "react-router"
 import { description, DescriptionStyles } from "./HomePage"
@@ -10,7 +9,11 @@ import {Navbar, Logo} from "./HomePage"
 export const UserTeams = () => {
 	return (
 		<>
-
+  <div style={{display: 'flex', width: '1000px', flexDirection: 'column', textAlign: 'center', justifyContent: 'center', marginTop: '3em', marginRight: 'auto', marginLeft: 'auto'}}>
+    <Navbar />
+    <Logo />
+    <p style={DescriptionStyles}>{description}</p>
+  </div>
 			<div style={{display:"block"}}>
             <div style={{display: 'flex', width: '1000px', flexDirection: 'column', textAlign: 'center', justifyContent: 'center', marginTop: '3em', marginRight: 'auto', marginLeft: 'auto'}}/>
 			<VerticalSidebar name1="project1" route1="/user/teams/1" 
@@ -23,11 +26,6 @@ export const UserTeams = () => {
 			</Routes>
 			</VerticalSidebar>
 			</div>
-            <div style={{display: 'flex', width: '1000px', flexDirection: 'column', textAlign: 'center', justifyContent: 'center', marginTop: '3em', marginRight: 'auto', marginLeft: 'auto'}}>
-    <Navbar />
-    <Logo />
-    <p style={DescriptionStyles}>{description}</p>
-  </div>
 			
 		</>
 	)
