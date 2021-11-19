@@ -12,21 +12,24 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/admin/users")
+@CrossOrigin(origins = "*")
 public class AdminController {
     private final AdminService adminService;
 
     @GetMapping
+    @ResponseStatus(code = HttpStatus.OK)
     public List<UserResponseDto> getAllUsers() {
         return adminService.getAllUsers();
     }
 
     @GetMapping("/{username}")
+    @ResponseStatus(code = HttpStatus.OK)
     public UserResponseDto getAdminUser(@PathVariable String username) {
         return adminService.getAdminUser(username);
     }
 
-    @ResponseStatus(code = HttpStatus.OK)
     @PatchMapping("/{username}")
+    @ResponseStatus(code = HttpStatus.OK)
     public UserResponseDto patchUser(@PathVariable String username,
                                      @RequestBody UserRequestDto userRequestDto) {
         return adminService.updateUser(username, userRequestDto);

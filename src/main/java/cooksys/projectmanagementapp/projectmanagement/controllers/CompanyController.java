@@ -11,26 +11,27 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/companies")
+@CrossOrigin(origins = "*")
 public class CompanyController {
 
     private final CompanyService companyService;
 
-    @ResponseStatus(code = HttpStatus.OK)
     @GetMapping("/{id}")
+    @ResponseStatus(code = HttpStatus.OK)
     public CompanyDto getCompany(@PathVariable long id) {
         return companyService.getCompany(id);
     }
 
-    @ResponseStatus(code = HttpStatus.OK)
     @PatchMapping("/{id}")
+    @ResponseStatus(code = HttpStatus.OK)
     public CompanyDto patchCompany(@PathVariable long id,
                                    @RequestBody CompanyRequestDto companyRequestDto) {
         return companyService.patchCompany(id, companyRequestDto);
     }
 
 
-    @ResponseStatus(code = HttpStatus.OK)
     @GetMapping
+    @ResponseStatus(code = HttpStatus.OK)
     public List<CompanyDto> getAllCompanies() {
         return companyService.getAllCompanies();
     }

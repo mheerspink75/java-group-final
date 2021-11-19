@@ -12,10 +12,12 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/admin/teams")
+@CrossOrigin(origins = "*")
 public class TeamController {
     private final TeamService teamService;
 
     @GetMapping()
+    @ResponseStatus(code = HttpStatus.OK)
     public List<TeamDto> getAdminTeams(){return teamService.getAdminTeams();}
 
     @ResponseStatus(code = HttpStatus.OK)
@@ -26,6 +28,7 @@ public class TeamController {
     }
 
     @GetMapping("/{teamid}")
+    @ResponseStatus(code = HttpStatus.OK)
     public TeamDto getAdminTeamById(@PathVariable("teamid") long id){return teamService.getAdminTeamById(id);}
 
     @PatchMapping("/{teamId}/add")
