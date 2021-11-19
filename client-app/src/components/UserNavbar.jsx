@@ -8,8 +8,8 @@ const UserNavbar = () => {
       <Container>
         <Navbar.Brand href='/'>React-Bootstrap</Navbar.Brand>
         <Nav className='me-auto'>
-          <Nav.Link href='/'>Home</Nav.Link>
-          <Nav.Link href='/myteams'>My Teams</Nav.Link>
+          <Nav.Link href='/user'>Home</Nav.Link>
+          <Nav.Link href='/user/myteams'>My Teams</Nav.Link>
         </Nav>
       </Container>
     </Navbar>

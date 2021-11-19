@@ -1,10 +1,10 @@
 import {Link} from 'react-router-dom';
 
-const description = `
+export const description = `
 Generic description text for all the users at FedEx. I will now begin my lorem ipsum. Lorem ipsum dolor sit amet, consectetur adipsicing elit. Sed sapien nulla, venenatis vestibulum bibendum nec, ornare et magna. Generic description text for all the users at FedEx. I will now begin my lorem ipsum. Lorem ipsum dolor sit amet, consectetur adipsicing elit. Sed sapien nulla, venenatis vestibulum bibendum nec, ornare et magna. Generic description text for all the users at FedEx. I will now begin my lorem ipsum. Lorem ipsum dolor sit amet, consectetur adipsicing elit. Sed sapien nulla, venenatis vestibulum
 `;
 
-const DescriptionStyles = {
+export const DescriptionStyles = {
   fontFamily: 'Roboto',
   fontStyle: 'normal',
   fontWeight: '300',
@@ -20,7 +20,7 @@ const DescriptionStyles = {
 };
 
 // TODO: make Logo
-const Logo = () => <h3>Welcome to the Fedex Wiki!</h3>;
+export const Logo = () => <h3>Welcome to the Fedex Wiki!</h3>;
 
 const Badge = () => (
   <div style={{display: 'flex', alignItems: 'center'}}>
@@ -34,13 +34,13 @@ const Badge = () => (
 
 const NavbarLinks = () => (
   <ul style={{display: 'flex', listStyleType: 'none', gap: '5px'}}>
-    <li><Link to="/">Home</Link></li>
-    <li><Link to="/teams">My Team</Link></li>
+    <li><Link to="/user">Home</Link></li>
+    <li><Link to="/user/teams">My Team</Link></li>
   </ul>
 );
 
 // TODO: Update to Navbar shared component
-const Navbar = () => (
+export const Navbar = () => (
   <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-around'}}>
     <Badge />
     <NavbarLinks />
