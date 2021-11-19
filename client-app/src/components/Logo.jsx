@@ -6,7 +6,7 @@ const Logo = () => {
 	}
 	return (
 		<div style={{width:'200px'}}>
-			<img src={CookLogo} style={style} ></img>
+			<img src={CookLogo} style={style} alt="Cook Logo"></img>
 		</div>
 	)
 }
