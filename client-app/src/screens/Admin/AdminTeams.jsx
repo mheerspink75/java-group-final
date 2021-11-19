@@ -24,9 +24,9 @@ const AdminTeams = () => {
 	return (
 		<div>
 			<AdminNavbar />
-			<div style={{ height:'80%',display: 'flex', flexDirection: 'row', justifyContent: 'space-around', paddingRight:'5%', paddingTop: '2%', paddingLeft:'5%', paddingBottom:'10%' }}>
-				<div style={{ display: 'flex', flexDirection: 'column', width:'20%' }}>
-					<VerticalSidebar name1="Team 1" name2="Team 2" name3="Team 3" route1="/admin/teams" route2="/admin/teams" route3="/admin/teams" style={{height:"50%", width:"200px", display:"block", paddingTop:'30%' }}></VerticalSidebar>
+			<div style={{ height:'80%', display:'flex', flexDirection: 'row',columnGap:'10px', paddingRight:'5%', paddingTop: '2%', paddingBottom:'10%'}}>
+				<div style={{ display: 'flex', flexDirection: 'column', width:'25%' }}>
+					<VerticalSidebar name1="Team 1" name2="Team 2" name3="Team 3" route1="/admin/teams" route2="/admin/teams" route3="/admin/teams" style={{display:"block", paddingTop:'20%', margin:'0 auto 0 auto'}}></VerticalSidebar>
 					
 				</div>
 				<div style={{ width: '100%', overflowY: 'scroll', display: 'flex', flexDirection: 'column', rowGap:'5%', height: '700px' }}>
