@@ -27,4 +27,9 @@ public class TeamController {
 
     @GetMapping("/{teamid}")
     public TeamDto getAdminTeamById(@PathVariable("teamid") long id){return teamService.getAdminTeamById(id);}
+
+    @PatchMapping("/{teamId}/add")
+    public TeamDto addUserToTeam(@PathVariable("teamId") long teamId, @RequestParam("userId") long userId) {
+    	return teamService.addUser(teamId, userId);
+    }
 }

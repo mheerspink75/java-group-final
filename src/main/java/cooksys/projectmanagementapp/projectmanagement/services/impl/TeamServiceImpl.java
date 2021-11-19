@@ -6,10 +6,12 @@ import cooksys.projectmanagementapp.projectmanagement.dtos.CompanyRequestDto;
 import cooksys.projectmanagementapp.projectmanagement.dtos.TeamDto;
 import cooksys.projectmanagementapp.projectmanagement.dtos.TeamRequestDto;
 import cooksys.projectmanagementapp.projectmanagement.entities.Team;
+import cooksys.projectmanagementapp.projectmanagement.entities.User;
 import cooksys.projectmanagementapp.projectmanagement.exceptions.BadRequestException;
 import cooksys.projectmanagementapp.projectmanagement.exceptions.NotFoundException;
 import cooksys.projectmanagementapp.projectmanagement.mappers.TeamMapper;
 import cooksys.projectmanagementapp.projectmanagement.repositories.TeamRepository;
+import cooksys.projectmanagementapp.projectmanagement.repositories.UserRepository;
 import cooksys.projectmanagementapp.projectmanagement.services.AuthService;
 import cooksys.projectmanagementapp.projectmanagement.services.TeamService;
 import lombok.RequiredArgsConstructor;
@@ -24,6 +26,7 @@ public class TeamServiceImpl implements TeamService {
     private final TeamMapper teamMapper;
     private final TeamRepository teamRepository;
     private final AuthService authService;
+    private final UserRepository userRepository;
 
 
 
@@ -32,7 +35,7 @@ public class TeamServiceImpl implements TeamService {
 
         final var user = authService.authenticate(teamDto.getCredentials());
 
-        if (user.isAdmin() && user.getTeam().getId().equals(id)) {
+        if (user.isAdmin() || user.getTeam().getId().equals(id)) {
 
             var userTeam =
                     teamRepository.findById(user.getTeam().getId()).orElseThrow(() -> new NotFoundException("Company Not Found"));
@@ -58,4 +61,14 @@ public class TeamServiceImpl implements TeamService {
     public TeamDto getAdminTeamById(long id) {
         return teamMapper.entityToResponseDto(teamRepository.getById(id));
     }
+
+	@Override
+	public TeamDto addUser(long teamId, long userId) {
+		Team team = teamRepository.findById(teamId).orElseThrow(()-> new NotFoundException("Team with such id not found"));
+		User user = userRepository.findById(userId).orElseThrow(()-> new NotFoundException("User with such id not found"));
+		user.setTeam(team);
+		userRepository.save(user);
+		team.getUsers().add(user);
+		return teamMapper.entityToResponseDto(teamRepository.save(team));
+	}
 }

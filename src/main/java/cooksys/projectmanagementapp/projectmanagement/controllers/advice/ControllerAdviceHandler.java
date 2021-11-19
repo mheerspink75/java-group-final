@@ -35,5 +35,5 @@ public class ControllerAdviceHandler {
                                                  NotAuthorizedException notAuthorizedException) {
         return new ErrorDto(notAuthorizedException.getMessage());
     }
-
+    
 }

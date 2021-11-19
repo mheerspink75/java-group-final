@@ -13,4 +13,6 @@ public interface TeamService {
     List<TeamDto> getAdminTeams();
 
     TeamDto getAdminTeamById(long id);
+    
+    TeamDto addUser(long teamId, long userId);
 }
