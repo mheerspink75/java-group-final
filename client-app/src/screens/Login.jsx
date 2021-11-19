@@ -17,6 +17,8 @@ const StyledHome = styled.div`
     font-family: "Fira Code", serif;
 `
 
+// TODO: SYNC STYLING WITH OTHER PAGES
+
 const Login = () => {
     return (
         <StyledHome>
