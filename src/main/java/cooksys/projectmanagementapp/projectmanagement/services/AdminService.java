@@ -1,5 +1,6 @@
 package cooksys.projectmanagementapp.projectmanagement.services;
 
+import cooksys.projectmanagementapp.projectmanagement.dtos.UserRequestDto;
 import cooksys.projectmanagementapp.projectmanagement.dtos.UserResponseDto;
 
 import java.util.List;
@@ -10,4 +11,5 @@ public interface AdminService {
 
     List<UserResponseDto> getAllUsers();
 
+    UserResponseDto updateUser(String username, UserRequestDto userRequestDto);
 }

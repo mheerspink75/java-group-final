@@ -6,6 +6,7 @@ import cooksys.projectmanagementapp.projectmanagement.entities.User;
 import cooksys.projectmanagementapp.projectmanagement.exceptions.BadRequestException;
 import cooksys.projectmanagementapp.projectmanagement.exceptions.NotFoundException;
 import cooksys.projectmanagementapp.projectmanagement.mappers.UserMapper;
+import cooksys.projectmanagementapp.projectmanagement.services.AuthService;
 import cooksys.projectmanagementapp.projectmanagement.services.UserService;
 import cooksys.projectmanagementapp.projectmanagement.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -17,6 +18,7 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService{
+
     private final UserRepository userRepository;
     private final UserMapper userMapper;
 
@@ -92,5 +94,6 @@ public class UserServiceImpl implements UserService{
         userRepository.saveAndFlush(user);
         return userMapper.entityToResponseDto(user);
     }
+
 
 }

@@ -77,7 +77,8 @@ public class CompanyServiceImpl implements CompanyService {
             return companyMapper.entityToResponseDto(userCompany);
         }
 
-        throw new BadRequestException("User doesn't belong to this Company");
+        throw new BadRequestException("User doesn't belong to this Company or isn't an " +
+                "Admin");
     }
 
 }

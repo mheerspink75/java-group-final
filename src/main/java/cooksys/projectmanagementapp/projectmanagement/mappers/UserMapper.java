@@ -2,14 +2,12 @@ package cooksys.projectmanagementapp.projectmanagement.mappers;
 
 import java.util.List;
 
-import cooksys.projectmanagementapp.projectmanagement.dtos.CompanyDto;
 import cooksys.projectmanagementapp.projectmanagement.dtos.UserRequestDto;
 import cooksys.projectmanagementapp.projectmanagement.dtos.UserResponseDto;
 import cooksys.projectmanagementapp.projectmanagement.entities.User;
 
 
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
+import org.mapstruct.*;
 
 @Mapper(componentModel = "spring", uses = { CredentialsMapper.class })
 public interface UserMapper {
@@ -20,5 +18,10 @@ public interface UserMapper {
     UserResponseDto entityToResponseDto(User user);
 
     List<UserResponseDto> entitiesToResponseDtos(List<User> users);
+
+    @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
+    @Mapping(target = "credentials", ignore = true)
+    void updateUserFromDto(UserRequestDto userRequestDto,
+                            @MappingTarget User userEntity);
 
 }

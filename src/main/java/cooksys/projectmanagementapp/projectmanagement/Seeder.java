@@ -161,7 +161,7 @@ public class Seeder implements CommandLineRunner {
         user_1.setLastName("One");
         user_1.setEmail("user1@email.com");
         user_1.setActive(true);
-        user_1.setAdmin(false);
+        user_1.setAdmin(true);
         user_1.setStatus("Joined");
         user_1.setTeam(team_1);
         user_1.setCompany(company_1);
@@ -215,7 +215,7 @@ public class Seeder implements CommandLineRunner {
         user_4.setLastName("One");
         user_4.setEmail("user4@email.com");
         user_4.setActive(true);
-        user_4.setAdmin(false);
+        user_4.setAdmin(true);
         user_4.setStatus("Joined");
         user_4.setTeam(team_2);
         user_4.setCompany(company_1);
@@ -266,7 +266,7 @@ public class Seeder implements CommandLineRunner {
         user_7.setLastName("One");
         user_7.setEmail("user7@email.com");
         user_7.setActive(true);
-        user_7.setAdmin(false);
+        user_7.setAdmin(true);
         user_7.setStatus("Joined");
         user_7.setTeam(team_3);
         user_7.setCompany(company_1);

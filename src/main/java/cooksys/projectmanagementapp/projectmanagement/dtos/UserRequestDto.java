@@ -19,9 +19,9 @@ public class UserRequestDto {
 
     private String phoneNumber;
 
-    private boolean isActive;
+    private Boolean isActive;
 
-    private boolean isAdmin;
+    private Boolean isAdmin;
 
     private String status;
 
