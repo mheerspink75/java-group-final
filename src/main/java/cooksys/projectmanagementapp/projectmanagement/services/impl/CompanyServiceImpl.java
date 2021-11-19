@@ -64,14 +64,14 @@ public class CompanyServiceImpl implements CompanyService {
 
         final var user = authService.authenticate(companyRequestDto.getCredentials());
 
-        if (user.isAdmin() && user.getCompany().getId().equals(id)) {
+        if (user.isAdmin() || user.getCompany().getId().equals(id)) {
 
             var userCompany =
-                    companyRepository.findById(user.getCompany().getId()).orElseThrow(() -> new NotFoundException("Company Not Found"));
+                    companyRepository.findById(user.getCompany().getId())
+                    .orElseThrow(() -> new NotFoundException("Company Not Found"));
 
-            userCompany.setName(companyRequestDto.getCompany().getName());
-            userCompany.setDescription(companyRequestDto.getCompany().getDescription());
-
+            companyMapper.patchCompany(companyMapper.requestToEntityDto(companyRequestDto.getCompany()), userCompany);
+            
             companyRepository.saveAndFlush(userCompany);
 
             return companyMapper.entityToResponseDto(userCompany);

@@ -38,11 +38,12 @@ public class TeamServiceImpl implements TeamService {
         if (user.isAdmin() || user.getTeam().getId().equals(id)) {
 
             var userTeam =
-                    teamRepository.findById(user.getTeam().getId()).orElseThrow(() -> new NotFoundException("Company Not Found"));
+                    teamRepository.findById(user.getTeam().getId())
+                    .orElseThrow(() -> new NotFoundException("Company Not Found"));
 
 
-            userTeam.setName(teamDto.getTeam().getName());
-            userTeam.setDescription(teamDto.getTeam().getDescription());
+           Team newTeam = teamMapper.requestDtoToEntity(teamDto.getTeam());
+           teamMapper.updateTeam(userTeam, newTeam);
 
             teamRepository.saveAndFlush(userTeam);
 

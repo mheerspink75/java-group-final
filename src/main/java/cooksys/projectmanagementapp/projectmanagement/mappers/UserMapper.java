@@ -19,7 +19,8 @@ public interface UserMapper {
 
     List<UserResponseDto> entitiesToResponseDtos(List<User> users);
 
-    @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
+    @BeanMapping(nullValueCheckStrategy=NullValueCheckStrategy.ALWAYS, 
+	nullValuePropertyMappingStrategy=NullValuePropertyMappingStrategy.IGNORE)
     @Mapping(target = "credentials", ignore = true)
     void updateUserFromDto(UserRequestDto userRequestDto,
                             @MappingTarget User userEntity);
