@@ -6,7 +6,7 @@ name: Server CI with Maven
 on:
   push:
     types: [ opened, synchronize, edited, reopened ]
-  branches: [ master, server ]
+    branches: [ master, server ]
   pull_request:
     types: [ opened, synchronize, edited, reopened ]
     branches: [ master, server ]
@@ -16,6 +16,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: dentarg/postgres@v1
       - uses: actions/checkout@v2
       - name: Setup JDK 11
         uses: actions/setup-java@v2
@@ -24,4 +25,4 @@ jobs:
           distribution: 'adopt'
           cache: maven
       - name: Build with Maven
-        run: mvn -B package --file pom.xml
+        run: mvn -B verify -Dspring.datasource.url=jdbc:postgresql://localhost/${{ env.USER }} -Dspring.datasource.user=${{ env.USER }}
