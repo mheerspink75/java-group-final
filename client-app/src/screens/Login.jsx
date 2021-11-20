@@ -3,6 +3,7 @@ import CardTitle from "../components/Style/CardTitle";
 import Section from "../components/Style/Section";
 import styled from 'styled-components'
 import Card from "../components/Style/Card";
+import LForm from "../components/Style/LForm";
 
 const StyledHome = styled.div`
     width: 100%;
@@ -16,6 +17,8 @@ const StyledHome = styled.div`
     font-family: "Fira Code", serif;
 `
 
+// TODO: SYNC STYLING WITH OTHER PAGES
+
 const Login = () => {
     return (
         <StyledHome>
@@ -23,12 +26,9 @@ const Login = () => {
                 <CardTitle>Login Page</CardTitle>
                 <Hr/>
                 <Section>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Donec euismod, nisl eget consectetur sagittis, nisl
-                        nunc ultrices eros, eu porttitor nisl nunc euismod
-                        nunc.
-                    </p>
+                    <LForm>
+
+                    </LForm>
                 </Section>
             </Card>
         </StyledHome>

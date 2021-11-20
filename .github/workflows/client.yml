@@ -1,13 +1,15 @@
 # This workflow will do a clean install of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: Client CI
+name: Client
 
 on:
   push:
-    branches: [ client ]
+    types: [opened, synchronize, edited, reopened]
+    branches: [master, client]
   pull_request:
-    branches: [ client ]
+    types: [opened, synchronize, edited, reopened]
+    branches: [master, client]
 
 jobs:
   build:
@@ -25,8 +27,11 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
+    - name: Upgrade npm 🎉
+      run: npm install -g npm@latest
+    - name: Install deps
+      run: npm ci
       working-directory: client-app
-    - run: npm run build --if-present
+    - name: build
+      run: npm run build
       working-directory: client-app
