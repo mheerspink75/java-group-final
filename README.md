@@ -14,3 +14,36 @@ For this assessment students will work in a group(s) to write a full stack appli
 
 [Wireframe Figma Link](https://www.figma.com/file/JKGV6vAsGILQV0CxozGo5B/Final-Wireframe?node-id=0%3A1)
 
+# Getting Started
+
+## Server Requirements
+- Java 11
+- PostgreSQL
+- Maven
+
+## Client Requirements
+- node 12.x, 14.x, or 16.x (17.x not yet supported, waiting on `react-scripts`)
+- npm 8.x
+
+## Starting Server
+```shell
+createdb projectmanagerapp
+mvn spring-boot:run
+```
+
+## Starting Client
+```shell
+cd client-app
+npm i
+npm start
+```
+
+## Starting Client w/ Auth disabled (dev mode only)
+```shell
+# bash/bourne shells
+REACT_APP_NO_AUTH=1 npm start
+
+# cmd (windows)
+set REACT_APP_NO_AUTH=1
+npm start
+```

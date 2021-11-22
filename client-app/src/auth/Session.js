@@ -1,8 +1,12 @@
 /**
  * @typedef {{
  *  username: string;
- *  is_admin: boolean;
- *  is_logged_in: boolean;
+ *  firstName: string;
+ *  lastName: string;
+ *  email: string;
+ *  phoneNumber: string;
+ *  isAdmin: boolean;
+ *  status: string;
  * }} SessionData
  */
 
@@ -11,31 +15,26 @@ const storageKey = 'session';
 
 export default class Session {
   /**
-   * @param {SessionData} data 
+   * @param {SessionData | null} data 
    */
-  constructor(data) {
+  constructor(data = null) {
     this.data = data;
   }
   username() {
-    return this.data.username;
+    return this.data?.username;
   }
   isAdmin() {
-    return this.data.is_admin;
+    return this.data?.isAdmin;
   }
   isLoggedIn() {
-    return this.data.is_logged_in;
+    return !!this.data;
   }
   /**
-   * @param {string} username
+   * @param {SessionData} data 
+   * @returns {Session}
    */
-  static newAdmin(username) {
-    return new Session({username, is_logged_in: true, is_admin: true}).write();
-  }
-  /**
-   * @param {string} username 
-   */
-  static newUser(username) {
-    return new Session({username, is_logged_in: true, is_admin: false}).write();
+  static fromData(data) {
+    return new Session(data).write();
   }
   static newNull() {
     return NullSession.write();
@@ -55,4 +54,4 @@ export default class Session {
   }
 }
 
-const NullSession = new Session({username: '', is_logged_in: false, is_admin: false});
+const NullSession = new Session();

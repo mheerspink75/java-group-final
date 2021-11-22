@@ -14,6 +14,7 @@ import AuthProvider from './auth/AuthProvider';
 import RequireUser from './auth/RequireUser';
 import RequireAdmin from './auth/RequireAdmin';
 import NoMatch from './auth/NoMatch';
+import Logout from './auth/Logout';
 
 const App = () => (
   <AuthProvider>
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="teams/3" element={<UserProject3 />} />
         </Route>
         <Route path="login" element={<Login />} />
+        <Route path="logout" element={<Logout />} />
         <Route path="admin" element={<RequireAdmin />}>
           <Route index element={<AdminHomePage/>} />
           <Route index path="home" element={<AdminHomePage/>} />

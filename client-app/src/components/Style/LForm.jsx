@@ -1,7 +1,7 @@
-import React from "react";
-import {useNavigate, useLocation} from "react-router-dom";
-import styled from "styled-components";
-import {Button, Form} from "react-bootstrap";
+import React from 'react';
+import {useNavigate, useLocation} from 'react-router-dom';
+import styled from 'styled-components';
+import {Button, Form} from 'react-bootstrap';
 import useAuth from '../../auth/useAuth';
 
 const StyledForm = styled.section`
@@ -10,11 +10,11 @@ const StyledForm = styled.section`
     justify-content: space-around;
     align-items: center;
     margin: 24px 0;
-    `
+`;
 
 const StyledErrors = styled.h3`
     margin-top: 15px;
-`
+`;
 
 // TODO: implement proper async handling with loading / spinners / etc
 const LForm = () => {
@@ -41,8 +41,8 @@ const LForm = () => {
         <StyledForm>
             <Form onSubmit={onSubmit}>
                 <Form.Group controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control name="email" type="email" placeholder="Enter email"/>
+                    <Form.Label>Username / Email</Form.Label>
+                    <Form.Control name="email" type="text" placeholder="Enter username / email"/>
                     <Form.Text className="text-muted">
                         We'll never share your email with anyone else.
                     </Form.Text>
@@ -59,5 +59,6 @@ const LForm = () => {
             {errors && <StyledErrors>{errors}</StyledErrors>}
         </StyledForm>
     )
-}
-export default LForm
+};
+
+export default LForm;
