@@ -1,6 +1,8 @@
 package cooksys.projectmanagementapp.projectmanagement.services.impl;
 
+import cooksys.projectmanagementapp.projectmanagement.dtos.CredentialsDto;
 import cooksys.projectmanagementapp.projectmanagement.dtos.UserRequestDto;
+import cooksys.projectmanagementapp.projectmanagement.mappers.CredentialsMapper;
 import cooksys.projectmanagementapp.projectmanagement.services.AdminService;
 import cooksys.projectmanagementapp.projectmanagement.dtos.UserResponseDto;
 import cooksys.projectmanagementapp.projectmanagement.entities.User;
@@ -21,6 +23,7 @@ public class AdminServiceImpl implements AdminService {
     private final UserRepository userRepository;
     private final UserMapper userMapper;
     private final AuthService authService;
+    private final CredentialsMapper credentialsMapper;
 
     private UserResponseDto validateUsername(String username, String message) {
 
@@ -58,5 +61,24 @@ public class AdminServiceImpl implements AdminService {
         }
 
         return userMapper.entityToResponseDto(userToUpdate);
+    }
+
+    @Override
+    public CredentialsDto patchUsernamePassword(String username, CredentialsDto newCredentialsDto) {
+
+        var userToUpdate =
+                userRepository.findByCredentialsUsername(username).orElseThrow(() -> new NotFoundException("User Not found"));
+
+        //var newUser = new User();
+
+        if (userRepository.findByCredentialsUsername(newCredentialsDto.getUsername()).isEmpty()) {
+            userToUpdate.getCredentials().setUsername(newCredentialsDto.getUsername());
+            userToUpdate.getCredentials().setPassword(newCredentialsDto.getPassword());
+            userRepository.saveAndFlush(userToUpdate);
+        } else {
+            throw new BadRequestException("Username is already taken");
+        };
+
+        return credentialsMapper.entityToResponseDto(userToUpdate.getCredentials());
     }
 }

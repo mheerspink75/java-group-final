@@ -1,5 +1,6 @@
 package cooksys.projectmanagementapp.projectmanagement.controllers;
 
+import cooksys.projectmanagementapp.projectmanagement.dtos.CredentialsDto;
 import cooksys.projectmanagementapp.projectmanagement.dtos.UserRequestDto;
 import cooksys.projectmanagementapp.projectmanagement.dtos.UserResponseDto;
 import cooksys.projectmanagementapp.projectmanagement.services.AdminService;
@@ -33,6 +34,11 @@ public class AdminController {
     public UserResponseDto patchUser(@PathVariable String username,
                                      @RequestBody UserRequestDto userRequestDto) {
         return adminService.updateUser(username, userRequestDto);
+    }
+
+    @PatchMapping("/usernamePassword/{username}")
+    public CredentialsDto patchUsernamePassword (@PathVariable String username, @RequestBody CredentialsDto newCredentialsDto) {
+        return adminService.patchUsernamePassword(username, newCredentialsDto );
     }
 
 }

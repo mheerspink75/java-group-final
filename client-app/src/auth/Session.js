@@ -5,7 +5,7 @@
  *  lastName: string;
  *  email: string;
  *  phoneNumber: string;
- *  isAdmin: boolean;
+ *  admin: boolean;
  *  status: string;
  * }} SessionData
  */
@@ -24,7 +24,7 @@ export default class Session {
     return this.data?.username;
   }
   isAdmin() {
-    return this.data?.isAdmin;
+    return !!this.data?.admin;
   }
   isLoggedIn() {
     return !!this.data;
