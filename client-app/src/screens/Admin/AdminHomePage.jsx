@@ -1,18 +1,20 @@
 import AdminNavbar from "../../components/AdminNavbar"
 import HomePageDiv from "../../components/Style/HomePageDiv"
 import EditableTextArea from "../../components/EditableTextArea"
-import ImageWithText from "../../components/ImageWithText"
+// import ImageWithText from "../../components/ImageWithText"
 
 const AdminHomePage = () => {
   
 let text = "Welcome to the Cook System Wiki"
-let image = "https://images.pexels.com/videos/3045163/free-video-3045163.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+// let image = "https://images.pexels.com/videos/3045163/free-video-3045163.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500"
 
   return (
     <div>
       <AdminNavbar />
       <HomePageDiv>
-            <ImageWithText imgSrc={image} Text={text} />
+        <p>{text}</p>
+            {/* Temporarily removing this until I can get this fixed
+            <ImageWithText imgSrc={image} Text={text} /> */}
         {/* TODO: update styling */}
           <EditableTextArea styles = {
               {fontFamily: "Roboto",

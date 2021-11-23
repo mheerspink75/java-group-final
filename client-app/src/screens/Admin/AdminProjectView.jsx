@@ -5,9 +5,10 @@ import { useState, useEffect } from "react"
 import { getProject, updateProject } from "../../services/AdminService"
 import { Link } from "react-router-dom"
 import Logo from "../../components/Logo"
+import { useLocation } from "react-router"
 
 const AdminProjectView = () => {
-
+	const {projectId} = useLocation().state
 	const [edit, SetEdit] = useState(false)
 	const editButton = () => {
 		SetEdit(true)
@@ -36,7 +37,7 @@ const AdminProjectView = () => {
 	const [projectLoaded, setProjectLoaded] = useState(false)
 	const [projectData, setProjectData] = useState({})
 
-	let projectId = 7 //number to be pulled from previous page
+	// let projectId = 7 //number to be pulled from previous page
 	
 	useEffect(() => {
 		const loadProjectData = () => {
