@@ -1,17 +1,16 @@
 package cooksys.projectmanagementapp.projectmanagement.controllers.advice;
 
 import cooksys.projectmanagementapp.projectmanagement.dtos.ErrorDto;
+import cooksys.projectmanagementapp.projectmanagement.exceptions.NotFoundException;
 import cooksys.projectmanagementapp.projectmanagement.exceptions.BadRequestException;
 import cooksys.projectmanagementapp.projectmanagement.exceptions.NotAuthorizedException;
-import javassist.NotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 
 
-@ControllerAdvice(basePackages = {"cooksys.projectmanagementapp.projectmanagement" +
-        ".controllers"})
+@ControllerAdvice(basePackages = {"cooksys.projectmanagementapp.projectmanagement.controllers"})
 @ResponseBody
 public class ControllerAdviceHandler {
 
