@@ -1,9 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
+
 import Login from './screens/Login';
 import UserHomePage from './screens/User/HomePage';
 import { UserTeams, UserProject1, UserProject2, UserProject3 } from './screens/User/MyTeam';
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 import AdminHomePage from './screens/Admin/AdminHomePage';
 import AdminAddMembers from './screens/Admin/AdminAddMember';
 import AdminProjectView from './screens/Admin/AdminProjectView';
@@ -15,6 +18,7 @@ import RequireUser from './auth/RequireUser';
 import RequireAdmin from './auth/RequireAdmin';
 import NoMatch from './auth/NoMatch';
 import Logout from './auth/Logout';
+
 
 const App = () => (
   <AuthProvider>

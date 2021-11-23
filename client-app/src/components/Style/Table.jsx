@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import * as users from "react-bootstrap/ElementChildren";
+import { useState, useEffect } from "react";
+import { adminGetAllUsers } from "../../services/AdminUserTableService";
 
 const StyledTable = styled.table`
   color: black;
@@ -18,37 +19,42 @@ const StyledTable = styled.table`
   tr:nth-child(even) {
     background-color: #f2f2f2;
   }
-  `
+`;
 
-const Table = (children, func) => {
-    return (
-        <StyledTable>
-        <table className="table table-striped">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Team</th>
-                    <th>Active</th>
-                    <th>Admin</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                {/* map through the users and display them in the table */}
-                {users.map(user => (
-                    <tr key={user.id}>
-                        <td>{user.name}</td>
-                        <td>{user.email}</td>
-                        {/*<td>{user.team}</td>*/}
-                        <td>{user.active ? 'Yes' : 'No'}</td>
-                        {/*<td>{user.admin ? 'Yes' : 'No'}</td>*/}
-                        <td>{user.status ? 'Joined' : 'Pending'}}</td>
-                    </tr>
-                ), func)}
-            </tbody>
-        </table>
-            </StyledTable>
-    )
-}
-export default Table;
+export const Table = () => {
+  const [users, setAllUsers] = useState([]);
+
+  useEffect(() => {
+    adminGetAllUsers().then((data) => {
+      setAllUsers(data);
+    });
+  }, []);
+
+  return (
+    <StyledTable className="table table-striped">
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Team</th>
+          <th>Active</th>
+          <th>Admin</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {/* map through the users and display them in the table */}
+        {users.map((user) => (
+          <tr key={user.id}>
+            <td>{user.username}</td>
+            <td>{user.email}</td>
+            {user.team === null ? <td>None</td> : <td>{user.team.name}</td>}
+            <td>{user.active ? "Yes" : "No"}</td>
+            <td>{user.admin ? "Yes" : "No"}</td>
+            <td>{user.status ? "Joined" : "Pending"}</td>
+          </tr>
+        ))}
+      </tbody>
+    </StyledTable>
+  );
+};

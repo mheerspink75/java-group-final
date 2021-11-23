@@ -1,29 +1,28 @@
-import AdminNavbar from "../../components/AdminNavbar"
-import Table from "../../components/Style/Table";
+import AdminNavbar from "../../components/AdminNavbar";
+import { Table } from "../../components/Style/Table";
 import styled from "styled-components";
 
 const StyledHome = styled.div`
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
 
-    font-family: "Fira Code", serif;
-`
+  font-family: "Fira Code", serif;
+`;
 
 // TODO: SYNC STYLING WITH OTHER PAGES
 
 const AdminUsers = () => {
-	return (
-		<StyledHome>
-			<AdminNavbar/>
-			<Table>
-			</Table>
-		</StyledHome>
-	)
-}
+  return (
+    <StyledHome>
+      <AdminNavbar />
+      <Table />
+    </StyledHome>
+  );
+};
 
-export default AdminUsers
+export default AdminUsers;
