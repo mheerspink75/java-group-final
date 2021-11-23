@@ -18,10 +18,12 @@ const StyledHome = styled.div`
 
 const AdminUsers = () => {
   return (
-    <StyledHome>
+    <div>
       <AdminNavbar />
-      <Table />
-    </StyledHome>
+      <StyledHome>
+        <Table />
+      </StyledHome>
+    </div>
   );
 };
 

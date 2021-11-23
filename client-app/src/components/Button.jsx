@@ -1,15 +1,12 @@
-import Nav from "react-bootstrap/Nav"
 import React from "react";
 import backImg from "../img/Red-Cross-Mark.png"
+import { Link } from "react-router-dom";
 
 
 export const SidebarButton = (props) => {
 
     return(
-
-    <Nav.Link href={props.link}>
-   <button type="button" className="btn btn-outline-primary" style={{padding:"10px 25px", margin:"10px"}}>{props.name}</button>
-    </Nav.Link>
+   <button onClick={props.onClick} type="button" className="btn btn-outline-primary" style={{padding:"10px 25px", margin:"10px"}}>{props.name}</button>
     )
 
 
@@ -18,10 +15,10 @@ export const SidebarButton = (props) => {
 export const SolidButton = (props) => {
 	return(
 
-		<Nav.Link href={props.link}>
+		<Link to={props.link}>
 	   <button type="button" className="btn btn-outline-primary" style={{padding:"5px 10px", margin:"3px", background:"blue", transform:"2s", color:"white", 
 	                                                                borderRadius:"35px"}}>{props.name}</button>
-		</Nav.Link>
+		</Link>
 		)
 }
 

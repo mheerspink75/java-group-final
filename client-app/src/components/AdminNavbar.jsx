@@ -30,6 +30,7 @@ const AdminNavbar = () => {
             </Nav.Link>
           </Nav.Item>
         </Nav>
+        <Nav.Link as={NavLink} to='/logout'>Log Out</Nav.Link>
       </Container>
     </Navbar>
   )

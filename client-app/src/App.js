@@ -26,6 +26,7 @@ const App = () => (
       <Routes>
         <Route path="user" element={<RequireUser />}>
           <Route index element={<UserHomePage />} />
+          <Route index path="home" element={<UserHomePage/>} />
           <Route path="teams" element={<UserTeams />} />
           <Route path="teams/1" element={<UserProject1 />} />
           <Route path="teams/2" element={<UserProject2 />} />

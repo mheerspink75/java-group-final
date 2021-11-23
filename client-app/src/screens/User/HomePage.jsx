@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom';
-
+import UserNavbar from '../../components/UserNavbar'
 export const description = `
 Generic description text for all the users at FedEx. I will now begin my lorem ipsum. Lorem ipsum dolor sit amet, consectetur adipsicing elit. Sed sapien nulla, venenatis vestibulum bibendum nec, ornare et magna. Generic description text for all the users at FedEx. I will now begin my lorem ipsum. Lorem ipsum dolor sit amet, consectetur adipsicing elit. Sed sapien nulla, venenatis vestibulum bibendum nec, ornare et magna. Generic description text for all the users at FedEx. I will now begin my lorem ipsum. Lorem ipsum dolor sit amet, consectetur adipsicing elit. Sed sapien nulla, venenatis vestibulum
 `;
@@ -50,8 +50,8 @@ export const Navbar = () => (
 // TODO: use a site-wide container
 // TODO: pull description from site
 const UserHomePage = () => <>
+    <UserNavbar />
   <div style={{display: 'flex', width: '1000px', flexDirection: 'column', textAlign: 'center', justifyContent: 'center', marginTop: '3em', marginRight: 'auto', marginLeft: 'auto'}}>
-    <Navbar />
     <Logo />
     <p style={DescriptionStyles}>{description}</p>
   </div>
