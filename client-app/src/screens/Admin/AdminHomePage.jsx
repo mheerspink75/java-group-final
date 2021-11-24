@@ -8,7 +8,9 @@ import { getCompany } from "../../services/AdminService"
 const AdminHomePage = () => {
   // let text = "Welcome to the Cook System Wiki"
   // let image = "https://images.pexels.com/videos/3045163/free-video-3045163.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-  const [company, setCompany] = useState({})
+  const [company, setCompany] = useState({
+    description: ""
+  })
 
   useEffect(() => {
     getCompany("1").then(companyData => {
@@ -30,17 +32,16 @@ const AdminHomePage = () => {
     <div>
       <AdminNavbar />
       <HomePageDiv>
-        <p>{"Welcome to the " + company.name + " wiki"}</p>
+        <h3>{"Welcome to the " + company.name + " wiki"}</h3>
         {/* Temporarily removing this until I can get this fixed
             <ImageWithText imgSrc={image} Text={text} /> */}
         {/* TODO: update styling */}
-        {!company ? <p>Loading Data</p> 
-        : 
-        <EditableTextArea
+        {!company.description ? <p>Loading Data</p> 
+        : <EditableTextArea
           styles={textAreaStyle}
           content={company.description}
         />
-  } 
+        } 
       </HomePageDiv>
     </div>
   )

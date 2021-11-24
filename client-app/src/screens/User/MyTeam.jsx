@@ -63,17 +63,17 @@ export const UserTeams = () => {
         <VerticalSidebar
           sideButtons={[
             {
-              name: "Project 1",
+              name: "Project One",
               route: "7",
               onClick: () => {
                 setProjectId({ id: 7 })
               },
             },
-            { name: "Project 2", route: "8" ,onClick: () => {
+            { name: "Project Two", route: "8" ,onClick: () => {
                 setProjectId({ id: 8 })
               }},
-            { name: "Project 3", route: "9",onClick: () => {
-                setProjectId({ id: 9 })
+            { name: "Project Seven", route: "9",onClick: () => {
+                setProjectId({ id: 13 })
               } },
           ]} teamId={userTeamId}
         ></VerticalSidebar>

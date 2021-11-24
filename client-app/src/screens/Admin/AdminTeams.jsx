@@ -12,10 +12,8 @@ const AdminTeams = () => {
     width: "100%",
     height: "100%",
     margin: "auto",
-    //border: '1px solid black',
     padding: "20px",
     resize: "none",
-    // overflow:'hidden',
   }
 
   const cutString = input => {

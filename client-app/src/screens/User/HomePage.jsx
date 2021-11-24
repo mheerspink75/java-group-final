@@ -1,26 +1,22 @@
+import { useEffect, useState } from 'react';
 import {Link} from 'react-router-dom';
 import UserNavbar from '../../components/UserNavbar'
+import { getCompany } from '../../services/AdminService';
 export const description = `
 Generic description text for all the users at FedEx. I will now begin my lorem ipsum. Lorem ipsum dolor sit amet, consectetur adipsicing elit. Sed sapien nulla, venenatis vestibulum bibendum nec, ornare et magna. Generic description text for all the users at FedEx. I will now begin my lorem ipsum. Lorem ipsum dolor sit amet, consectetur adipsicing elit. Sed sapien nulla, venenatis vestibulum bibendum nec, ornare et magna. Generic description text for all the users at FedEx. I will now begin my lorem ipsum. Lorem ipsum dolor sit amet, consectetur adipsicing elit. Sed sapien nulla, venenatis vestibulum
 `;
 
 export const DescriptionStyles = {
-  fontFamily: 'Roboto',
-  fontStyle: 'normal',
-  fontWeight: '300',
-  fontSize: '30px',
-  lineHeight: '35px',
-
-  borderStyle: 'solid',
-  borderWidth: '1px',
-  borderRadius: '5px', 
-  boxShadow: '1px 1px 1px #000', 
-  height: '300px', 
-  overflowY: 'scroll'
+    width: '80%',
+		height: '500px',
+		margin: 'auto',
+		borderRadius: '20px',
+		padding: '20px',
+		resize: 'none',
+		border: '1px solid black'
 };
 
 // TODO: make Logo
-export const Logo = () => <h3>Welcome to the Fedex Wiki!</h3>;
 
 const Badge = () => (
   <div style={{display: 'flex', alignItems: 'center'}}>
@@ -49,12 +45,22 @@ export const Navbar = () => (
 
 // TODO: use a site-wide container
 // TODO: pull description from site
-const UserHomePage = () => <>
+const UserHomePage = () => {
+  const [company, setCompany] = useState({})
+
+  useEffect(() => {
+    getCompany("1").then(companyData => {
+      setCompany(companyData)
+    })
+  }, [])
+ 
+ return (<>
     <UserNavbar />
   <div style={{display: 'flex', width: '1000px', flexDirection: 'column', textAlign: 'center', justifyContent: 'center', marginTop: '3em', marginRight: 'auto', marginLeft: 'auto'}}>
-    <Logo />
-    <p style={DescriptionStyles}>{description}</p>
+  <h3>Welcome to the {company.name} Wiki!</h3>
+    <p style={DescriptionStyles}>{company.description}</p>
   </div>
-</>;
+</>);
+}
 
 export default UserHomePage;
