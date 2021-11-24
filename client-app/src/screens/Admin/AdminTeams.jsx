@@ -59,7 +59,7 @@ const AdminTeams = () => {
 				name: t.name,
 				route: t.id, 
 				onClick: () => setCurTeam(t.id)
-			  }))}
+			  }))} teamId={curTeam}
             ></VerticalSidebar>
           }
         </div>

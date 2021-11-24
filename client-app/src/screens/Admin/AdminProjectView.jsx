@@ -1,28 +1,13 @@
 import React from "react"
-import { Button } from "../../components/Button"
-import TextArea from "../../components/TextArea"
 import { useState, useEffect } from "react"
 import { getProject, updateProject } from "../../services/AdminService"
 import { Link } from "react-router-dom"
 import Logo from "../../components/Logo"
 import { useLocation } from "react-router"
+import EditableTextArea from "../../components/EditableTextArea"
 
 const AdminProjectView = () => {
 	const {projectId} = useLocation().state
-	const [edit, SetEdit] = useState(false)
-	const editButton = () => {
-		SetEdit(true)
-	}
-	const saveButton = () => {
-		const newData = projectData
-		newData["description"] = document.getElementById('projectDescription').value
-		setProjectData(newData)
-		updateProject(projectData["id"], projectData).then(() => SetEdit(false))
-	}
-	const cancelButton = () => {
-		document.getElementById('projectDescription').value = projectData["description"]
-		SetEdit(false)
-	}
 
 	const textAreaStyle = {
 		width: '80%',
@@ -61,21 +46,8 @@ const AdminProjectView = () => {
 					<h1 style={{ textAlign: 'center' }}>{projectData.name}</h1>
 					<Link to="/admin/teams" style={{ textDecoration: 'none', marginLeft: '10%', marginRight: '80%', fontSize: '20px' }}>&lt;- Back</Link>
 				</div>
-
-
-				{edit ? <div style={{ display: 'flex', flexDirection: 'column' }} >
-					<TextArea style={textAreaStyle} content={projectData.description} id="projectDescription" readOnly={false} > </TextArea>
-					<div style={{ marginLeft: '70%', paddingTop: '10px', display: 'flex', columnGap: '20px' }}>
-						<Button name="save" onClick={saveButton}  ></Button>
-						<Button name="cancel" onClick={cancelButton} ></Button>
-					</div>
-				</div> :
-					<div style={{ display: 'flex', flexDirection: 'column' }}>
-						<TextArea style={textAreaStyle} content={projectData.description} id="projectDescription" readOnly={true} > </TextArea>
-						<div style={{ marginLeft: '80%', paddingTop: '10px' }}>
-							<Button name="edit" onClick={editButton}  ></Button>
-						</div>
-					</div>}
+				{console.log(projectData)}
+				<EditableTextArea styles={textAreaStyle} content={projectData.description} saveClickFunction={updateProject} saveFunctionArgs={projectData}/>
 			</div>
 			}
 			{/* outer layer*/}

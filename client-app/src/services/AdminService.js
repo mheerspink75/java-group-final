@@ -13,8 +13,8 @@ export const getProject = async (id) => {
 	return data;
 };
 
-export const updateProject = async (id, requestBody) => {
-	const response = await fetch(getAllProjectsUrl + `/${id}`, {
+export const updateProject = async (requestBody) => {
+	const response = await fetch(getAllProjectsUrl + `/${requestBody.id}`, {
 		 method:'PATCH',
 		 headers: {
 			 'Accept': 'application/json',
