@@ -175,7 +175,7 @@ public class Seeder implements CommandLineRunner {
         User user_2 = new User();
         user_2.setCredentials(cred_2);
         user_2.setFirstName("User");
-        user_2.setLastName("One");
+        user_2.setLastName("Two");
         user_2.setEmail("user2@email.com");
         user_2.setActive(true);
         user_2.setAdmin(false);
@@ -192,7 +192,7 @@ public class Seeder implements CommandLineRunner {
         User user_3 = new User();
         user_3.setCredentials(cred_3);
         user_3.setFirstName("User");
-        user_3.setLastName("One");
+        user_3.setLastName("Three");
         user_3.setEmail("user3@email.com");
         user_3.setActive(true);
         user_3.setAdmin(false);
@@ -212,7 +212,7 @@ public class Seeder implements CommandLineRunner {
         User user_4 = new User();
         user_4.setCredentials(cred_4);
         user_4.setFirstName("User");
-        user_4.setLastName("One");
+        user_4.setLastName("Four");
         user_4.setEmail("user4@email.com");
         user_4.setActive(true);
         user_4.setAdmin(true);
@@ -229,7 +229,7 @@ public class Seeder implements CommandLineRunner {
         User user_5 = new User();
         user_5.setCredentials(cred_5);
         user_5.setFirstName("User");
-        user_5.setLastName("One");
+        user_5.setLastName("Five");
         user_5.setEmail("user5@email.com");
         user_5.setActive(true);
         user_5.setAdmin(false);
@@ -246,7 +246,7 @@ public class Seeder implements CommandLineRunner {
         User user_6 = new User();
         user_6.setCredentials(cred_6);
         user_6.setFirstName("User");
-        user_6.setLastName("One");
+        user_6.setLastName("Six");
         user_6.setEmail("user6@email.com");
         user_6.setActive(true);
         user_6.setAdmin(false);
@@ -263,7 +263,7 @@ public class Seeder implements CommandLineRunner {
         User user_7 = new User();
         user_7.setCredentials(cred_7);
         user_7.setFirstName("User");
-        user_7.setLastName("One");
+        user_7.setLastName("Seven");
         user_7.setEmail("user7@email.com");
         user_7.setActive(true);
         user_7.setAdmin(true);
@@ -280,7 +280,7 @@ public class Seeder implements CommandLineRunner {
         User user_8 = new User();
         user_8.setCredentials(cred_8);
         user_8.setFirstName("User");
-        user_8.setLastName("One");
+        user_8.setLastName("Eight");
         user_8.setEmail("user8@email.com");
         user_8.setActive(true);
         user_8.setAdmin(false);
@@ -297,7 +297,7 @@ public class Seeder implements CommandLineRunner {
         User user_9 = new User();
         user_9.setCredentials(cred_9);
         user_9.setFirstName("User");
-        user_9.setLastName("One");
+        user_9.setLastName("Nine");
         user_9.setEmail("user9@email.com");
         user_9.setActive(true);
         user_9.setAdmin(false);
