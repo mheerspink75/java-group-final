@@ -1,4 +1,5 @@
 const getAllProjectsUrl = "http://localhost:8080/api/admin/projects/";
+const getCompanyUrl = "http://localhost:8080/api/companies"
 
 export const getAllProjects = async () => {
     const response = await fetch(getAllProjectsUrl);
@@ -24,3 +25,12 @@ export const updateProject = async (requestBody) => {
 	});
 	await response.json()
 };
+
+export const getCompany = async (id) => {
+	console.log(id)
+	console.log(getCompanyUrl + `/${id}`)
+	const response = await fetch(getCompanyUrl + `/${id}`);
+	const data = await response.json();
+	console.log(data);
+	return data;
+}

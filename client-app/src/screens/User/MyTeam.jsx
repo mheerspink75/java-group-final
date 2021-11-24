@@ -21,9 +21,7 @@ export const UserTeams = () => {
   
   const [projectData, setProjectData] = useState({})
   const [projectId, setProjectId] = useState({ id: 7 })
-  const [userTeamId, setUserTeamId] = useState({
-	  
-  })
+  const [userTeamId, setUserTeamId] = useState({})
   
   useEffect(() => {
     const loadProjectData = () => {
