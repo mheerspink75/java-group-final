@@ -12,10 +12,8 @@ const AdminTeams = () => {
     width: "100%",
     height: "100%",
     margin: "auto",
-    //border: '1px solid black',
     padding: "20px",
     resize: "none",
-    // overflow:'hidden',
   }
 
   const cutString = input => {
@@ -59,7 +57,7 @@ const AdminTeams = () => {
 				name: t.name,
 				route: t.id, 
 				onClick: () => setCurTeam(t.id)
-			  }))}
+			  }))} teamId={curTeam}
             ></VerticalSidebar>
           }
         </div>

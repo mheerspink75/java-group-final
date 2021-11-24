@@ -3,18 +3,23 @@ import Section from "./Style/Section"
 
 // TODO: Update Styles 
 
-const EditableTextArea = ({styles}) => {
+const EditableTextArea = ({styles, content, saveClickFunction, saveFunctionArgs}) => {
   const [currentState, updateState] = useState({
     value: "view",
     desc: {
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget consectetur sagittis, nisl nunc ultrices eros, eu porttitor nisl nunc euismod nunc.",
+      text: content,
     },
     oldDesc: {
-      text: "",
+      text: content,
     },
   })
 
   const DescriptionStyles = styles
+
+  const ButtonStyles = {
+    marginLeft: '80%', 
+    paddingTop: '10px'
+  }
 
   let description = (
     <textarea style={DescriptionStyles} value={currentState.desc.text} disabled/>
@@ -34,7 +39,9 @@ const EditableTextArea = ({styles}) => {
   )
 
   let editButton = (
-    <div style={{ display: "flex", justifyContent: "end", marginRight:"20px"}}>
+    <div style={ButtonStyles}>
+      {console.log("function: " + saveClickFunction)} 
+      {console.log("args: " + JSON.stringify(saveFunctionArgs))}
       <button
         onClick={e => {
           updateState({
@@ -45,6 +52,7 @@ const EditableTextArea = ({styles}) => {
               text: currentState.desc.text,
             },
           })
+          
         }}
       >
         edit
@@ -58,13 +66,17 @@ const EditableTextArea = ({styles}) => {
   }
 
   let saveAndCancelButtons = (
-    <div style={{ display: "flex", justifyContent: "end", marginRight:"20px" }}>
+    <div style={ButtonStyles}>
       <button
         onClick={e => {
           updateState({
             ...currentState,
             value: "view",
           })
+          if(saveFunctionArgs && saveClickFunction){
+            saveFunctionArgs.description = currentState.desc.text
+            saveClickFunction(saveFunctionArgs)
+          }
         }}
       >
         save
